@@ -1,0 +1,26 @@
+/* styles.css */
+.table-responsive {
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+  }
+  
+  .table th, .table td {
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 576px) {
+    .table th, .table td {
+      font-size: 0.875rem;
+    }
+  }
+  
+  .img-thumbnail {
+    max-width: 100px;
+    height: auto;
+  }
+  

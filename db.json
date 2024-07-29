@@ -1,0 +1,71 @@
+{
+  "restaurants": [
+    {
+      "name": "Nation 52 lounge and bar",
+      "description": "North Indian restaurant",
+      "location": "Cummins College pune",
+      "contact": " 07775980052",
+      "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipNjB71c60rXEYhhKI2YFWDlN08pcFCGfRHHQHUx=s680-w680-h510",
+      "id": "db6a"
+    },
+    {
+      "name": "Sarovar Restaurant",
+      "description": "Serves vegan dishes",
+      "location": " Karve Nagar, Pune",
+      "contact": "545467890",
+      "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipPxdAo1Yoe2R7IJZwHLgSAqA5RuMPLdLAZVAz_P=s680-w680-h510",
+      "id": "3283"
+    },
+    {
+      "name": "Shorba Family Restaurant",
+      "description": "Serves vegan dishes",
+      "location": "Anand Nagar, Pune",
+      "contact": "9503742316",
+      "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipP48owGgdu-ZVOujIhF_zn_NFcumPs5OCbGOWcd=s680-w680-h510",
+      "id": "ddc5"
+    },
+    {
+      "id": "84f0",
+      "name": "Basari Dining",
+      "description": "Reservations required",
+      "location": "Warje Jakat Naka,Pune",
+      "contact": " 08069245378",
+      "imageUrl": "https://lh5.googleusercontent.com/p/AF1QipMN5SKDNi0zyLRQDYqZgHviaNQQaxS08znSrJ6p=w260-h175-n-k-no"
+    },
+    {
+      "id": "bd76",
+      "name": "One Way Foods",
+      "description": " Has outdoor seating",
+      "location": "Anand Nagar, Pune",
+      "contact": "9503742316",
+      "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipOLz3nH0c3tSlycOzXm7M5-oBwAy8T0p79qpM-q=s680-w680-h510"
+    },
+    {
+      "id": "fa64",
+      "name": "Sinhagad Restaurant",
+      "description": "Serves vegetarian dishes · Has kids' menu",
+      "location": " Khadewadi, Pune",
+      "contact": " 08390666066",
+      "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipPaLL31_WRWmhi-tkdZSiiNieu6hu9GttaiwrsR=s680-w680-h510"
+    }
+  ],
+  "categories": [
+    {
+      "id": "b55e",
+      "name": "vaibhav "
+    },
+    {
+      "id": "c5c7",
+      "name": "vaibhav "
+    }
+  ],
+  "menus": [
+    {
+      "name": "admin",
+      "description": "aedb v",
+      "price": 3,
+      "categoryId": null,
+      "id": "8163"
+    }
+  ]
+}

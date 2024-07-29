@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FoodieDelight</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Restaurants</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page"  routerLink="/categories">categories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" routerLink="/menus">Menus</a>
+                </li>
+            
+              </ul>
+          </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h2 class="text-center" style="color: aliceblue;">{{ menuItemId ? 'Edit Menu Item' : 'Add Menu Item' }}</h2>
+    <form [formGroup]="menuForm" (ngSubmit)="onSubmit()" class="mt-4" style="color: aliceblue;">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+        <div *ngIf="menuForm.get('name')?.invalid && menuForm.get('name')?.touched" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control" formControlName="description"></textarea>
+        <div *ngIf="menuForm.get('description')?.invalid && menuForm.get('description')?.touched"
+             class="text-danger">
+          Description is required.
+        </div>
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="price">Price</label>
+        <input type="number" id="price" class="form-control" formControlName="price">
+        <div *ngIf="menuForm.get('price')?.invalid && menuForm.get('price')?.touched" class="text-danger">
+          Price is required.
+        </div>
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="categoryId">Category</label>
+        <select id="categoryId" class="form-control" formControlName="categoryId">
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+        <div *ngIf="menuForm.get('categoryId')?.invalid && menuForm.get('categoryId')?.touched"
+             class="text-danger">
+          Category is required.
+        </div>
+      </div>
+  
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-primary" [disabled]="menuForm.invalid">
+          {{ menuItemId ? 'Update' : 'Add' }} Menu Item
+        </button>
+      </div>
+    </form>
+  </div>
+  

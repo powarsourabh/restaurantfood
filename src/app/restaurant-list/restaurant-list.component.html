@@ -1,0 +1,76 @@
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">FoodieDelight</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+           
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Restaurants</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"  routerLink="/categories">categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/menus">Menus</a>
+            </li>
+        
+          </ul>
+        </div>
+  </div>
+</nav>
+
+  
+  
+
+  <div class="container mt-5">
+    <h2 class="text-center" style="color: aliceblue;">Restaurants</h2>
+    <a routerLink="/restaurants/new" class="btn btn-success mb-3">Add Restaurant</a>
+  
+    <div class="row mb-3">
+      <div class="col-md-2">
+        <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="searchName" (input)="filterRestaurants()">
+      </div>
+    </div>
+  
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Contact</th>
+            <th>Image</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let restaurant of paginatedRestaurants">
+            <td>{{ restaurant.name }}</td>
+            <td>{{ restaurant.description }}</td>
+            <td>{{ restaurant.location }}</td>
+            <td>{{ restaurant.contact }}</td>
+            <td>
+              <img [src]="restaurant.imageUrl" alt="{{ restaurant.name }}" class="img-thumbnail" style="max-width: 100px;">
+            </td>
+            <td>
+              <a [routerLink]="['/restaurants/edit', restaurant.id]" class="btn btn-primary">Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="d-flex justify-content-between mt-3">
+      <button class="btn btn-primary" [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
+      <button class="btn btn-primary" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+    </div>
+  </div>
+  
+  
