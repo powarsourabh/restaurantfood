@@ -46,7 +46,7 @@
             <th>Description</th>
             <th>Location</th>
             <th>Contact</th>
-            <th>Image</th>
+            <!-- <th>Image</th> -->
             <th>Actions</th>
           </tr>
         </thead>
@@ -56,11 +56,11 @@
             <td>{{ restaurant.description }}</td>
             <td>{{ restaurant.location }}</td>
             <td>{{ restaurant.contact }}</td>
-            <td>
-              <img [src]="restaurant.imageUrl" alt="{{ restaurant.name }}" class="img-thumbnail" style="max-width: 100px;">
-            </td>
+         
             <td>
               <a [routerLink]="['/restaurants/edit', restaurant.id]" class="btn btn-primary">Edit</a>
+              <button (click)="deleteRestaurant(restaurant.id)" class="btn btn-danger">Delete</button>
+
             </td>
           </tr>
         </tbody>

@@ -10,6 +10,7 @@ import { MenuItem } from 'models/menu.model';
 })
 export class RestaurantService {
 
+  
 
   private apiurl = "http://localhost:3000/restaurants";
 
@@ -37,10 +38,11 @@ export class RestaurantService {
     return this.http.put(`${this.apiurl}/${id}`, restaurant);
   }
 
-  deleteRestaurant(id: string): Observable<any> {
-    return this.http.delete(`${this.apiurl}/${id}`);
-  }
+ 
 
+  deleteRestaurant(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiurl}/${id}`);
+  }
 
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(this.apiUrl1);

@@ -24,7 +24,7 @@ export class RestaurantFormComponent implements OnInit {
           location: ['', Validators.required],
           contact: ['', [Validators.required, this.numericValidator]],
 
-          imageUrl: ['', Validators.required]
+          // imageUrl: ['', Validators.required]
 
           // imageFile: [null, Validators.required] 
 
@@ -66,13 +66,7 @@ export class RestaurantFormComponent implements OnInit {
 
  
 
-  onDelete(): void {
-    if (this.restaurantId) {
-      this.restuarantservice.deleteRestaurant(this.restaurantId).subscribe(() => {
-        this.router.navigate(['/restaurants']);
-      });
-    }
-  }
+
 
   numericValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value;

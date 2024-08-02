@@ -63,19 +63,13 @@
   
       
 
-      <div class="form-group mt-3">
-        <label for="imageUrl">Image URL</label>
-        <input type="text" id="imageUrl" class="form-control" formControlName="imageUrl">
-        <div *ngIf="restaurantForm.get('imageUrl')?.invalid && restaurantForm.get('imageUrl')?.touched" class="text-danger">
-          Image URL is required.
-        </div>
-      </div>
+    
   
       <div class="d-flex justify-content-between mt-4">
         <button type="submit" class="btn btn-primary" [disabled]="restaurantForm.invalid">
           {{ restaurantId ? 'Update' : 'Add' }} Restaurant
         </button>
-        <button type="button" class="btn btn-danger" *ngIf="restaurantId" (click)="onDelete()">Delete Restaurant</button>
+        <!-- <button type="button" class="btn btn-danger" *ngIf="restaurantId" (click)="onDelete()">Delete Restaurant</button> -->
       </div>
     </form>
   </div>

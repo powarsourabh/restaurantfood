@@ -29,6 +29,16 @@ export class RestaurantListComponent implements OnInit {
     }))
   }
 
+  deleteRestaurant(id: number): void {
+    if (confirm('Are you sure you want to delete this restaurant?')) {
+      this.restaurantservice.deleteRestaurant(id).subscribe(() => {
+        this.restaurants = this.restaurants.filter(restaurant => restaurant.id !== id);
+        this.filterRestaurants();
+      }, error => console.error(error));
+    }
+  }
+
+  
   filterRestaurants(): void {
     this.filteredRestaurants = this.restaurants.filter(restaurant => {
       const matchesName = restaurant.name.toLowerCase().includes(this.searchName.toLowerCase());
