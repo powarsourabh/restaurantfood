@@ -48,7 +48,7 @@
   ],
   "categories": [
     {
-      "name": "food",
+      "name": "food 1",
       "id": "b55e"
     },
     {
@@ -67,7 +67,7 @@
   "menus": [
     {
       "name": "paneer masala",
-      "description": "aedb v",
+      "description": "aedb v ",
       "price": 20,
       "categoryId": "2749",
       "id": "8163"
