@@ -1,54 +1,56 @@
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">FoodieDelight</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-               
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Restaurants</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page"  routerLink="/categories">categories</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" routerLink="/menus">Menus</a>
-                </li>
-            
-              </ul>
-          </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">FoodieDelight</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/categories">categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/menus">Menus</a>
+        </li>
+
+      </ul>
     </div>
+  </div>
 </nav>
 
 <div class="container mt-5">
-    <h2 class="text-center" style="color: aliceblue;">Menu Items</h2>
-    <a routerLink="/menus/new" class="btn btn-success mb-3">Add Menu Item</a>
-    <table class="table table-striped table-responsive">
-      <thead class="thead-dark">
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let menuItem of menuItems">
-          <td>{{ menuItem.name }}</td>
-          <td>{{ menuItem.description }}</td>
-          <td>{{ menuItem.price | currency }}</td>
-          <td>{{ getCategoryName(menuItem.categoryId) }}</td>
-          <td>
-            <a [routerLink]="['/menus/edit', menuItem.id]" class="btn btn-primary">Edit</a>
-            <button class="btn btn-danger" (click)="onDelete(menuItem.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <h2 class="text-center" style="color: aliceblue;">Menu Items</h2>
+  <a routerLink="/menus/new" class="btn btn-success mb-3">Add Menu Item</a>
+  <table class="table table-striped table-responsive">
+    <thead class="thead-dark">
+      <tr>
+
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Restaurants</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let menuItem of menuItems">
+
+        <td>{{ menuItem.name }}</td>
+        <td>{{ menuItem.description }}</td>
+        <td>{{ menuItem.price | currency }}</td>
+        <td>{{getRestaurantname(menuItem.restaurantId)}}</td>
+        <td>{{ getCategoryName(menuItem.categoryId) }}</td>
+        <td>
+          <a [routerLink]="['/menus/edit', menuItem.id]" class="btn btn-primary">Edit</a>
+          <button class="btn btn-danger" (click)="onDelete(menuItem.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

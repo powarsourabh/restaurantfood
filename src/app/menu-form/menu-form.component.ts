@@ -14,6 +14,9 @@ export class MenuFormComponent implements OnInit{
   menuForm: FormGroup;
   menuItemId: string | null;
   categories: Category[] = [];
+  restaurants: any[] = [];
+
+  
 
   constructor(private fb: FormBuilder,
      private restaurantservice: RestaurantService,
@@ -23,6 +26,7 @@ export class MenuFormComponent implements OnInit{
       name: ['', Validators.required],
       description: ['', Validators.required],
       price: ['', Validators.required],
+      restaurantId: ['', Validators.required],
       categoryId: ['', Validators.required]
     });
     this.menuItemId = this.route.snapshot.paramMap.get('id');
@@ -31,6 +35,9 @@ export class MenuFormComponent implements OnInit{
   ngOnInit(): void {
     this.restaurantservice.getCategories().subscribe((data) => {
       this.categories = data;
+      this.restaurantservice.getRestaurants().subscribe((data)=> {
+        this.restaurants = data;
+      })
     });
 
     if (this.menuItemId) {
@@ -38,9 +45,11 @@ export class MenuFormComponent implements OnInit{
         const menuItem = data.find(menuItem => menuItem.id === this.menuItemId);
         if (menuItem) {
           this.menuForm.patchValue({
+          
             name: menuItem.name,
             description: menuItem.description,
             price: menuItem.price,
+            restaurantId:menuItem.restaurantId,
             categoryId: menuItem.categoryId
           });
         }

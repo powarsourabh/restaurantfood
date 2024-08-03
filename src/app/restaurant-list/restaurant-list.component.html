@@ -46,7 +46,7 @@
             <th>Description</th>
             <th>Location</th>
             <th>Contact</th>
-            <!-- <th>Image</th> -->
+          
             <th>Actions</th>
           </tr>
         </thead>
@@ -56,6 +56,7 @@
             <td>{{ restaurant.description }}</td>
             <td>{{ restaurant.location }}</td>
             <td>{{ restaurant.contact }}</td>
+        
          
             <td>
               <a [routerLink]="['/restaurants/edit', restaurant.id]" class="btn btn-primary">Edit</a>
@@ -69,6 +70,7 @@
   
     <div class="d-flex justify-content-between mt-3">
       <button class="btn btn-primary" [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
+      <span class="d-flex justify-content-between mt-3" style="color: aliceblue;" >Items Per page= {{itemsPerPage}} </span>
       <button class="btn btn-primary" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
     </div>
   </div>

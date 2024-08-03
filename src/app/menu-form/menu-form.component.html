@@ -52,6 +52,17 @@
       </div>
   
       <div class="form-group mt-3">
+        <label for="restaurantId">Restaurant</label>
+        <select id="restaurantId" class="form-control" formControlName="restaurantId">
+          <option *ngFor="let restaurant of restaurants" [value]="restaurant.id">{{restaurant.name}}</option>
+        </select>
+        <div *ngIf="menuForm.get('restaurantId')?.invalid && menuForm.get('restaurantId')?.touched"
+             class="text-danger">
+          Restaurant is required.
+        </div>
+      </div>
+
+      <div class="form-group mt-3">
         <label for="categoryId">Category</label>
         <select id="categoryId" class="form-control" formControlName="categoryId">
           <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>

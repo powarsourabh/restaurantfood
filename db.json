@@ -1,27 +1,11 @@
 {
   "restaurants": [
     {
-      "name": "Nation 52 lounge and bar",
-      "description": "North Indian restaurant",
-      "location": "Cummins College pune",
-      "contact": " 07775980052",
-      "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipNjB71c60rXEYhhKI2YFWDlN08pcFCGfRHHQHUx=s680-w680-h510",
-      "id": "db6a"
-    },
-    {
-      "name": "Sarovar Restaurant",
-      "description": "Serves vegan dishes vhb",
-      "location": " Karve Nagar, Pune",
-      "contact": "545467890",
-      "id": "3283"
-    },
-    {
       "id": "84f0",
       "name": "Basari Dining",
       "description": "Reservations required",
       "location": "Warje Jakat Naka,Pune",
-      "contact": " 08069245378",
-      "imageUrl": "https://lh5.googleusercontent.com/p/AF1QipMN5SKDNi0zyLRQDYqZgHviaNQQaxS08znSrJ6p=w260-h175-n-k-no"
+      "contact": " 08069245378"
     },
     {
       "name": "One Way Foods",
@@ -39,11 +23,60 @@
       "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipPaLL31_WRWmhi-tkdZSiiNieu6hu9GttaiwrsR=s680-w680-h510"
     },
     {
-      "id": "4d16",
       "name": "admin",
       "description": "tfyugij",
       "location": "Kolhapur",
-      "contact": " 07775980052"
+      "contact": " 07775980055",
+      "id": "4d16"
+    },
+    {
+      "name": "admin",
+      "description": "GUHIHIJ",
+      "location": "Kolhapur, Maharashtra   ",
+      "contact": " 07775980052",
+      "id": "0833"
+    },
+    {
+      "name": "vaibhav ",
+      "description": "g kfksgdf  bvh",
+      "location": "pune",
+      "contact": "7410580653",
+      "id": "d731"
+    },
+    {
+      "name": "Bhushan111",
+      "description": "bhushan1",
+      "location": "mumbai",
+      "contact": "7888856541",
+      "id": "caba"
+    },
+    {
+      "name": "yippe",
+      "description": "something",
+      "location": "Pune",
+      "contact": "7410580653",
+      "id": "b635"
+    },
+    {
+      "id": "17ab",
+      "name": "vaibhav ",
+      "description": "sqcec",
+      "location": "Pune",
+      "contact": "9503742316"
+    },
+    {
+      "id": "8bcb",
+      "name": "simmi",
+      "description": "eceqc",
+      "location": "Kolhapur",
+      "contact": "7410580653"
+    },
+    {
+      "id": "8809",
+      "name": "hotel  7/12",
+      "description": "veg non-veg",
+      "location": "Kolhapur",
+      "contact": "7516546765"
     }
   ],
   "categories": [
@@ -56,21 +89,42 @@
       "id": "c5c7"
     },
     {
-      "name": "lunch",
-      "id": "2749"
-    },
-    {
       "id": "8e9f",
       "name": "breakfast"
     }
   ],
   "menus": [
     {
-      "name": "paneer masala",
-      "description": "aedb v ",
-      "price": 20,
-      "categoryId": "2749",
-      "id": "8163"
+      "name": "vaibhav ",
+      "description": "egwhbg",
+      "price": 345,
+      "restaurantId": "4d16",
+      "categoryId": "c5c7",
+      "id": "a1a7"
+    },
+    {
+      "name": "egg omlete 1",
+      "description": "gwbbgr",
+      "price": 14,
+      "restaurantId": "bd76",
+      "categoryId": "8e9f",
+      "id": "5cfc"
+    },
+    {
+      "id": "a5c6",
+      "name": "vaibhav ",
+      "description": "wegwgf",
+      "price": 34,
+      "restaurantId": "fa64",
+      "categoryId": "b55e"
+    },
+    {
+      "name": "vaibhav 45",
+      "description": "cwc",
+      "price": 2,
+      "restaurantId": "84f0",
+      "categoryId": "b55e",
+      "id": "d200"
     }
   ]
 }

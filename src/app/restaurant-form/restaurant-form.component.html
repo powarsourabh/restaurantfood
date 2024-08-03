@@ -1,76 +1,76 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">FoodieDelight</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-             
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Restaurants</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page"  routerLink="/categories">categories</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" routerLink="/menus">Menus</a>
-              </li>
-          
-            </ul>
-          </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">FoodieDelight</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/categories">categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/menus">Menus</a>
+        </li>
+
+      </ul>
     </div>
+  </div>
 </nav>
 
 <div class="container mt-5">
-    <h2 class="text-center" style="color: aliceblue;">{{ restaurantId ? 'Edit Restaurant' : 'Add New Restaurant' }}</h2>
-    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()" class="mt-4" style="color: aliceblue;">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" class="form-control" formControlName="name">
-        <div *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched" class="text-danger">
-          Name is required.
-        </div>
+  <h2 class="text-center" style="color: aliceblue;">{{ restaurantId ? 'Edit Restaurant' : 'Add New Restaurant' }}</h2>
+  <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()" class="mt-4" style="color: aliceblue;">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control" formControlName="name">
+      <div *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched" class="text-danger">
+        Name is required.
       </div>
-  
-      <div class="form-group mt-3">
-        <label for="description">Description</label>
-        <textarea id="description" class="form-control" formControlName="description"></textarea>
-        <div *ngIf="restaurantForm.get('description')?.invalid && restaurantForm.get('description')?.touched"
-             class="text-danger">
-          Description is required.
-        </div>
-      </div>
-  
-      <div class="form-group mt-3">
-        <label for="location">Location</label>
-        <input type="text" id="location" class="form-control" formControlName="location">
-        <div *ngIf="restaurantForm.get('location')?.invalid && restaurantForm.get('location')?.touched"
-             class="text-danger">
-          Location is required.
-        </div>
-      </div>
-  
-      <div class="form-group mt-3">
-        <label for="contact">Contact</label>
-        <input type="text" id="contact" class="form-control" formControlName="contact">
-        <div *ngIf="restaurantForm.get('contact')?.invalid && restaurantForm.get('contact')?.touched"
-             class="text-danger">
-          Contact is required/ add number only.
-        </div>
-      </div>
-  
-      
+    </div>
 
-    
-  
-      <div class="d-flex justify-content-between mt-4">
-        <button type="submit" class="btn btn-primary" [disabled]="restaurantForm.invalid">
-          {{ restaurantId ? 'Update' : 'Add' }} Restaurant
-        </button>
-        <!-- <button type="button" class="btn btn-danger" *ngIf="restaurantId" (click)="onDelete()">Delete Restaurant</button> -->
+    <div class="form-group mt-3">
+      <label for="description">Description</label>
+      <textarea id="description" class="form-control" formControlName="description"></textarea>
+      <div *ngIf="restaurantForm.get('description')?.invalid && restaurantForm.get('description')?.touched"
+        class="text-danger">
+        Description is required.
       </div>
-    </form>
-  </div>
-  
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="location">Location</label>
+      <input type="text" id="location" class="form-control" formControlName="location">
+      <div *ngIf="restaurantForm.get('location')?.invalid && restaurantForm.get('location')?.touched"
+        class="text-danger">
+        Location is required.
+      </div>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="contact">Contact</label>
+      <input type="text" id="contact" class="form-control" formControlName="contact">
+      <div *ngIf="restaurantForm.get('contact')?.invalid && restaurantForm.get('contact')?.touched" class="text-danger">
+        10 digit required/ add number only.
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="d-flex justify-content-between mt-4">
+      <button type="submit" class="btn btn-primary" [disabled]="restaurantForm.invalid">
+        {{ restaurantId ? 'Update' : 'Add' }} Restaurant
+      </button>
+    </div>
+  </form>
+</div>

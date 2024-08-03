@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
 
+
 @Component({
   selector: 'app-restaurant-list',
   templateUrl: './restaurant-list.component.html',
@@ -9,11 +10,12 @@ import { RestaurantService } from '../restaurant.service';
 export class RestaurantListComponent implements OnInit {
 
   restaurants: any[] = [];
+
   filteredRestaurants: any[] = [];
   paginatedRestaurants: any[] = [];
   searchName: string = '';
   currentPage: number = 1;
-  itemsPerPage: number = 5;
+  itemsPerPage: number = 10;
   totalPages: number = 1;
   constructor(private restaurantservice:RestaurantService){
 
@@ -25,9 +27,16 @@ export class RestaurantListComponent implements OnInit {
       this.filteredRestaurants = data;
       this.updatePagination();
 
+    
+
       console.log(this.restaurants);
     }))
+
+  
+   
   }
+ 
+
 
   deleteRestaurant(id: number): void {
     if (confirm('Are you sure you want to delete this restaurant?')) {

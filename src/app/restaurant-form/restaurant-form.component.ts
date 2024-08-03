@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MenuItem } from 'models/menu.model';
 
 @Component({
   selector: 'app-restaurant-form',
@@ -12,28 +13,33 @@ export class RestaurantFormComponent implements OnInit {
 
   restaurantForm: FormGroup;
   restaurantId: string | null;
+  menuItems: MenuItem[] = [];
 
 
-  constructor(private restuarantservice: RestaurantService, 
+
+  constructor(private restuarantservice: RestaurantService,
     private fb: FormBuilder,
-     private router: Router,
-      private route: ActivatedRoute){
-        this.restaurantForm = this.fb.group({
-          name: ['', Validators.required], 
-          description: ['', Validators.required], 
-          location: ['', Validators.required],
-          contact: ['', [Validators.required, this.numericValidator]],
+    private router: Router,
+    private route: ActivatedRoute) {
+    this.restaurantForm = this.fb.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      location: ['', Validators.required],
+      contact: ['', [this.mobileNumberValidator, Validators.required, this.numericValidator]],
 
-          // imageUrl: ['', Validators.required]
 
-          // imageFile: [null, Validators.required] 
 
-        });
-        this.restaurantId = this.route.snapshot.paramMap.get('id');
+
+    });
+    this.restaurantId = this.route.snapshot.paramMap.get('id');
 
   }
 
   ngOnInit(): void {
+
+
+
+
     if (this.restaurantId) {
       this.restuarantservice.getRestaurant(this.restaurantId).subscribe((data) => {
         this.restaurantForm.setValue({
@@ -41,7 +47,7 @@ export class RestaurantFormComponent implements OnInit {
           description: data.description,
           location: data.location,
           contact: data.contact,
-          imageUrl: data.imageUrl
+
         });
       });
     }
@@ -64,7 +70,7 @@ export class RestaurantFormComponent implements OnInit {
   }
 
 
- 
+
 
 
 
@@ -75,4 +81,11 @@ export class RestaurantFormComponent implements OnInit {
     }
     return null;
   }
+
+  mobileNumberValidator(control: AbstractControl): ValidationErrors | null {
+    const valid = /^\d{10}$/.test(control.value);
+    return valid ? null : { invalidMobileNumber: true };
+  }
 }
+
+

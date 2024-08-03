@@ -32,7 +32,8 @@ export class CategoryListComponent implements OnInit {
 
   onDelete(id: string): void {
     this.restaurantservice.deleteCategory(id).subscribe(() => {
-      this.categories = this.categories.filter(category => category.id !== id);
+     let categories = this.categories.filter(category => category.id !== id);
+     this.categories =categories
     });
   }
 
